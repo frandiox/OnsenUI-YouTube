@@ -23,6 +23,7 @@ angular.module('myApp')
 
     $scope.nextPageToken = '';
     $scope.lastQuery = '';
+    $scope.label = 'You haven\'t searched for any video yet!';
     $scope.loading = false;
 
     $scope.search = function () {
@@ -40,6 +41,9 @@ angular.module('myApp')
         }
       })
       .success( function (data) {
+        if (data.items.length === 0) {
+          $scope.label = 'No results were found!';
+        }
         VideosService.listResults(data, $scope.nextPageToken && ($scope.lastQuery === query));
         $scope.lastQuery = query;
         $scope.nextPageToken = data.nextPageToken;
