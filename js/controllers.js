@@ -21,23 +21,38 @@ angular.module('myApp')
       $log.info('Launched id:' + id + ' and title:' + title);
     };
 
+    $scope.nextPageToken = '';
+    $scope.lastQuery = '';
+    $scope.loading = false;
+
     $scope.search = function () {
+      $scope.loading = true;
+      var query = this.query;
       $http.get('https://www.googleapis.com/youtube/v3/search', {
         params: {
           key: 'AIzaSyDiByKCET1fLAuBHJL462BXx2lnKXce6so',
           type: 'video',
-          maxResults: '8',
+          maxResults: '10',
+          pageToken: $scope.nextPageToken,
           part: 'id,snippet',
-          fields: 'items/id,items/snippet/title,items/snippet/description,items/snippet/thumbnails/default,items/snippet/channelTitle',
-          q: this.query
+          fields: 'items/id,items/snippet/title,items/snippet/description,items/snippet/thumbnails/default,items/snippet/channelTitle,nextPageToken',
+          q: query
         }
       })
       .success( function (data) {
-        VideosService.listResults(data);
+        VideosService.listResults(data, $scope.nextPageToken && ($scope.lastQuery === query));
+        $scope.lastQuery = query;
+        $scope.nextPageToken = data.nextPageToken;
         $log.info(data);
       })
       .error( function () {
         $log.info('Search error');
-      });
+      })
+      .finally( function () {
+        $scope.loadMoreButton.stopSpin();
+        $scope.loadMoreButton.setDisabled(false);
+        $scope.loading = false;
+      })
+      ;
     }
 });

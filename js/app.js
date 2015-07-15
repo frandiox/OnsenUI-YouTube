@@ -76,8 +76,10 @@ app.service('VideosService', ['$window', '$rootScope', '$log', function ($window
     return youtube;
   }
 
-  this.listResults = function (data) {
-    results.length = 0;
+  this.listResults = function (data, append) {
+    if (!append) {
+      results.length = 0;
+    }
     for (var i = data.items.length - 1; i >= 0; i--) {
       results.push({
         id: data.items[i].id.videoId,
