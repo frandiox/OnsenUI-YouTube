@@ -1,0 +1,34 @@
+<ons-page>
+  <ons-toolbar id="searchToolbar" style="position: fixed;" fixed-style>
+    <div class="center">Onsen UI Jukebox - Search</div>
+  </ons-toolbar>
+  <div class="search-bar">
+    <form ng-submit="search()">
+      <input type="search" class="search-input" style="width: 96%; margin: 6px auto 6px auto;" placeholder="Search" ng-model="query">
+    </form>
+  </div>
+  <ons-list class="after-search-bar">
+    <ons-list-item modifier="chevron tight" class="list-item-container" ng-repeat="video in results" ng-click="modal.show(); launch(video.id, video.title, true)">
+      <ons-row>
+        <ons-col width="95px">
+          <img class="thumbnail" ng-src="{{ video.thumbnail }}">
+        </ons-col>
+        <ons-col>
+          <div class="title">
+            {{ video.title }}
+          </div>
+          <div class="user">
+            <ons-icon icon="fa fa-user"></ons-icon> {{ video.author ? video.author : "Anonymous" }}
+          </div>
+          <div class="desc">
+            {{ video.description }}
+          </div>
+        </ons-col>
+        <ons-col width="40px"></ons-col>
+      </ons-row>
+    </ons-list-item>
+  </ons-list>
+  <p class="no-result" ng-show="results.length === 0">
+    You haven't searched for any video yet!
+  </p>
+</ons-page>

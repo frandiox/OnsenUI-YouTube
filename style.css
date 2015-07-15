@@ -1,0 +1,48 @@
+#searchToolbar ~ .page__content{
+    margin-top: 45px;
+}
+.search-bar {
+    width: 100%;
+    position: fixed;
+    display: block;
+    margin-top: -45px;
+}
+.after-search-bar {
+    margin-top: -10px;
+}
+.no-result {
+    margin-top: 30px;
+    color: #999;
+    font-size: 15px;
+    text-align: center;
+}
+
+.list-item-container {
+  line-height: 1;
+  padding: 15px 0px 15px 15px;
+}
+
+.thumbnail {
+  width: 80px;
+  height: 80px;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+}
+
+.title {
+  font-weight: 500;
+  line-height: 16px;
+  font-size: 15px;
+  margin-bottom: 6px;
+}
+
+.user {
+  font-size: 14px;
+  opacity: 0.4;
+  margin-bottom: 6px;
+}
+
+.desc {
+  line-height: 1.2;
+  font-size: 13px;
+}

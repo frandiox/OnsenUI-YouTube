@@ -1,0 +1,10 @@
+<ons-page>
+  <ons-toolbar style="position: fixed;" fixed-style>
+    <div class="center">Onsen UI Jukebox - History</div>
+  </ons-toolbar>
+  <ons-list>
+    <ons-list-item data-ng-repeat="video in history">
+      <span data-ng-click="modal.show(); launch(video.id, video.title, false)">{{video.title}}</span>
+    </ons-list-item>
+  </ons-list>
+</ons-page>
