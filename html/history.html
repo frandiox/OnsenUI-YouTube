@@ -3,7 +3,7 @@
     <div class="center youtube-toolbar">Onsen UI YouTube - History</div>
   </ons-toolbar>
   <ons-list>
-    <ons-list-item class="list-item-container" ng-repeat="video in history" ng-click="modal.show(); launch(video, false)">
+    <ons-list-item modifier="tappable" class="list-item-container" ng-repeat="video in history" ng-click="modal.show(); launch(video, false)">
       <ons-row>
         <ons-col width="95px">
           <img class="thumbnail" ng-src="{{ video.thumbnail }}">

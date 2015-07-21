@@ -14,6 +14,20 @@
   color: white;
 }
 
+@media all and (orientation: portrait) {
+  #player {
+    height: 40vh;
+  }
+}
+
+@media all and (orientation: landscape) {
+  #player {
+    height: 90vh;
+    width: 90vw;
+    margin: auto;
+  }
+}
+
 .search-input {
   background: #b31217;
   border: none;
