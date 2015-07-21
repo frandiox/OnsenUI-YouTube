@@ -28,8 +28,8 @@ app.service('VideosService', ['$window', '$rootScope', '$log', function ($window
     playerId: null,
     videoId: null,
     videoTitle: null,
-    playerHeight: '480',
-    playerWidth: '640',
+    playerHeight: '100%',
+    playerWidth: '100%',
     state: 'stopped'
   };
   var results = [];
