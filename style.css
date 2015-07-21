@@ -47,18 +47,15 @@
 ::-moz-placeholder{ color: #e52d27;}
 :-ms-input-placeholder{ color: #e52d27;}
 
-#searchToolbar ~ .page__content{
-    margin-top: 45px;
-}
-
 .search-bar {
     width: 100%;
     position: fixed;
     display: block;
-    margin-top: -45px;
+    z-index: 2;
 }
 .after-search-bar {
-    margin-top: -10px;
+    margin-top: 35px;
+    z-index: 1;
 }
 .after-list {
     margin-top: 30px;
