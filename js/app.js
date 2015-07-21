@@ -92,10 +92,12 @@ app.service('VideosService', ['$window', '$rootScope', '$log', function ($window
     return results;
   }
 
-  this.archiveVideo = function (id, title) {
+  this.archiveVideo = function (video) {
     history.unshift({
-      id: id,
-      title: title
+      id: video.id,
+      title: video.title,
+      thumbnail: video.thumbnail,
+      description: video.description
     });
     return history;
   };

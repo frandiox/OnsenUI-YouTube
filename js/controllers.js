@@ -13,12 +13,12 @@ angular.module('myApp')
       $scope.history = VideosService.getHistory();
     }
 
-    $scope.launch = function (id, title, archive) {
-      VideosService.launchPlayer(id, title);
+    $scope.launch = function (video, archive) {
+      VideosService.launchPlayer(video.id, video.title);
       if (archive) {
-      	VideosService.archiveVideo(id, title);
+      	VideosService.archiveVideo(video);
       }
-      $log.info('Launched id:' + id + ' and title:' + title);
+      $log.info('Launched id:' + video.id + ' and title:' + video.title);
     };
 
     $scope.nextPageToken = '';

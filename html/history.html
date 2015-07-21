@@ -3,8 +3,24 @@
     <div class="center">Onsen UI Jukebox - History</div>
   </ons-toolbar>
   <ons-list>
-    <ons-list-item data-ng-repeat="video in history">
-      <span data-ng-click="modal.show(); launch(video.id, video.title, false)">{{video.title}}</span>
+    <ons-list-item class="list-item-container" ng-repeat="video in history" ng-click="modal.show(); launch(video, false)">
+      <ons-row>
+        <ons-col width="95px">
+          <img class="thumbnail" ng-src="{{ video.thumbnail }}">
+        </ons-col>
+        <ons-col>
+          <div class="title">
+            {{ video.title }}
+          </div>
+          <div class="user">
+            <ons-icon icon="fa fa-user"></ons-icon> {{ video.author ? video.author : "Anonymous" }}
+          </div>
+          <div class="desc">
+            {{ video.description }}
+          </div>
+        </ons-col>
+        <ons-col width="40px"></ons-col>
+      </ons-row>
     </ons-list-item>
   </ons-list>
 </ons-page>
