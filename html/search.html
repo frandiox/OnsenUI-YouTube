@@ -1,10 +1,10 @@
 <ons-page>
   <ons-toolbar id="searchToolbar" style="position: fixed;" fixed-style>
-    <div class="center">Onsen UI Jukebox - Search</div>
+    <div class="center youtube-toolbar">Onsen UI YouTube - Search</div>
   </ons-toolbar>
-  <div class="search-bar">
+  <div class="search-bar youtube-toolbar">
     <form ng-submit="search()">
-      <input type="search" class="search-input" style="width: 96%; margin: 6px auto 6px auto;" placeholder="Search" ng-model="query">
+      <input type="search" class="search-input" placeholder="Search for videos in YouTube" ng-model="query">
     </form>
   </div>
   <ons-list class="after-search-bar">
@@ -18,7 +18,7 @@
             {{ video.title }}
           </div>
           <div class="user">
-            <ons-icon icon="fa fa-user"></ons-icon> {{ video.author ? video.author : "Anonymous" }}
+            <ons-icon icon="fa fa-user"><span style="font-size: 12px"> {{ video.author ? video.author : "Anonymous" }}</span></ons-icon>
           </div>
           <div class="desc">
             {{ video.description }}
@@ -30,9 +30,9 @@
   </ons-list>
   <p class="after-list" ng-show="results.length === 0">
     <span ng-hide="loading">{{ label }}</span>
-    <span ng-show="loading"><ons-icon icon="fa fa-spinner" spin="true"></ons-icon></span>
+    <span ng-show="loading"><ons-icon icon="fa fa-spinner" size="22px" spin="true"></ons-icon></span>
   </p>
   <p class="after-list" ng-show="results.length > 0 && nextPageToken !== ''">
-    <ons-button var="loadMoreButton" ng-click="loadMoreButton.startSpin(); loadMoreButton.setDisabled(true); search()">Load more videos</ons-button>
+    <ons-button var="loadMoreButton" style="background-color: #e52d27" ng-click="loadMoreButton.startSpin(); loadMoreButton.setDisabled(true); search()">Load more videos</ons-button>
   </p>
 </ons-page>

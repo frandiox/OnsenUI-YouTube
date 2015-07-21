@@ -1,6 +1,6 @@
 <ons-page>
   <ons-toolbar style="position: fixed;" fixed-style>
-    <div class="center">Onsen UI Jukebox - History</div>
+    <div class="center youtube-toolbar">Onsen UI YouTube - History</div>
   </ons-toolbar>
   <ons-list>
     <ons-list-item class="list-item-container" ng-repeat="video in history" ng-click="modal.show(); launch(video, false)">
@@ -13,7 +13,7 @@
             {{ video.title }}
           </div>
           <div class="user">
-            <ons-icon icon="fa fa-user"></ons-icon> {{ video.author ? video.author : "Anonymous" }}
+            <ons-icon icon="fa fa-user"><span style="font-size: 12px"> {{ video.author ? video.author : "Anonymous" }}</span></ons-icon>
           </div>
           <div class="desc">
             {{ video.description }}
