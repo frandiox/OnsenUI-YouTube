@@ -47,6 +47,10 @@
 ::-moz-placeholder{ color: #e52d27;}
 :-ms-input-placeholder{ color: #e52d27;}
 
+#searchToolbar ~ .page__content{
+  margin-top: 0px;
+}
+
 .search-bar {
     width: 100%;
     position: fixed;
