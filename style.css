@@ -74,6 +74,7 @@
 .after-search-bar {
     margin-top: 35px;
     z-index: 1;
+    word-wrap: break-word !important;
 }
 .after-list {
     margin-top: 30px;
