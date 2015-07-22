@@ -22,13 +22,11 @@ angular.module('myApp')
     };
 
     $scope.nextPageToken = '';
-    $scope.lastQuery = '';
     $scope.label = 'You haven\'t searched for any video yet!';
     $scope.loading = false;
 
-    $scope.search = function () {
+    $scope.search = function (newQuery) {
       $scope.loading = true;
-      var query = this.query;
       $http.get('https://www.googleapis.com/youtube/v3/search', {
         params: {
           key: 'AIzaSyDiByKCET1fLAuBHJL462BXx2lnKXce6so',
@@ -37,15 +35,14 @@ angular.module('myApp')
           pageToken: $scope.nextPageToken,
           part: 'id,snippet',
           fields: 'items/id,items/snippet/title,items/snippet/description,items/snippet/thumbnails/default,items/snippet/channelTitle,nextPageToken',
-          q: query
+          q: this.query
         }
       })
       .success( function (data) {
         if (data.items.length === 0) {
           $scope.label = 'No results were found!';
         }
-        VideosService.listResults(data, $scope.nextPageToken && ($scope.lastQuery === query));
-        $scope.lastQuery = query;
+        VideosService.listResults(data, $scope.nextPageToken && !newQuery);
         $scope.nextPageToken = data.nextPageToken;
         $log.info(data);
       })

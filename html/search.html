@@ -3,7 +3,7 @@
     <div class="center youtube-toolbar">Onsen UI YouTube - Search</div>
   </ons-toolbar>
   <div class="search-bar youtube-toolbar">
-    <form ng-submit="search()">
+    <form ng-submit="search(true)">
       <input type="search" class="search-input" placeholder="Search for videos in YouTube" ng-model="query">
     </form>
   </div>
@@ -33,6 +33,6 @@
     <span ng-show="loading"><ons-icon icon="fa fa-spinner" size="22px" spin="true"></ons-icon></span>
   </p>
   <p class="after-list" ng-show="results.length > 0 && nextPageToken !== ''">
-    <ons-button var="loadMoreButton" style="background-color: #e52d27" ng-click="loadMoreButton.startSpin(); loadMoreButton.setDisabled(true); search()">Load more videos</ons-button>
+    <ons-button var="loadMoreButton" style="background-color: #e52d27" ng-click="loadMoreButton.startSpin(); loadMoreButton.setDisabled(true); search(false)">Load more videos</ons-button>
   </p>
 </ons-page>
