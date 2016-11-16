@@ -41,7 +41,6 @@
 
 .search-input input::-webkit-search-cancel-button {
   -webkit-appearance: none;
-  margin-right: 15px;
 }
 
 .search-bar {
