@@ -1,26 +1,25 @@
-<ons-page>
-  <ons-toolbar style="position: fixed;" fixed-style>
-    <div class="center youtube-toolbar">Onsen UI YouTube - History</div>
-  </ons-toolbar>
-  <ons-list>
-    <ons-list-item modifier="tappable" class="list-item-container" ng-repeat="video in history track by $index" ng-click="modal.show(); launch(video, false)">
-      <ons-row>
-        <ons-col width="95px">
+<ons-page ons-show="updateToolbar('History')">
+  <div class="content">
+    <ons-list>
+      <ons-list-item tappable disable-auto-styling ng-repeat="video in history track by $index" ng-click="modal.show(); launch(video, false)">
+        <div class="left">
           <img class="thumbnail" ng-src="{{ video.thumbnail }}">
-        </ons-col>
-        <ons-col>
+        </div>
+        <div class="center">
           <div class="title">
             {{ video.title }}
           </div>
           <div class="user">
-            <ons-icon icon="fa fa-user"><span style="font-size: 12px"> {{ video.author ? video.author : "Anonymous" }}</span></ons-icon>
+            <ons-icon icon="fa-user"></ons-icon><span style="font-size: 12px"> {{ video.author ? video.author : "Anonymous" }}</span>
           </div>
           <div class="desc">
             {{ video.description }}
           </div>
-        </ons-col>
-        <ons-col width="40px"></ons-col>
-      </ons-row>
-    </ons-list-item>
-  </ons-list>
+        </div>
+      </ons-list-item>
+    </ons-list>
+    <p class="after-list" ng-show="history.length === 0">
+      {{labelHistory}}
+    </p>
+  </div>
 </ons-page>

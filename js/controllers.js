@@ -13,6 +13,19 @@ angular.module('myApp')
       $scope.history = VideosService.getHistory();
     }
 
+    $scope.isAndroid = function() {
+      return ons.platform.isAndroid();
+    }
+
+    $scope.toolbarTitle = 'Search';
+    $scope.updateToolbar = function(title) {
+      $scope.toolbarTitle = title;
+    }
+
+    $scope.focusInput = function() {
+      document.getElementById('android-search-input').focus();
+    };
+
     $scope.launch = function (video, archive) {
       VideosService.launchPlayer(video.id, video.title);
       if (archive) {
@@ -22,12 +35,18 @@ angular.module('myApp')
     };
 
     $scope.nextPageToken = '';
-    $scope.label = 'You haven\'t searched for any video yet!';
+    $scope.labelSearch = 'You haven\'t searched for any video yet!';
+    $scope.labelHistory = 'You haven\'t watched any video yet!';
+
     $scope.loading = false;
+
+    $scope.loadMore = function(done) {
+      $scope.search(false).then(done);
+    };
 
     $scope.search = function (isNewQuery) {
       $scope.loading = true;
-      $http.get('https://www.googleapis.com/youtube/v3/search', {
+      return $http.get('https://www.googleapis.com/youtube/v3/search', {
         params: {
           key: 'AIzaSyDiByKCET1fLAuBHJL462BXx2lnKXce6so',
           type: 'video',
@@ -45,13 +64,10 @@ angular.module('myApp')
         VideosService.listResults(data, $scope.nextPageToken && !isNewQuery);
         $scope.nextPageToken = data.nextPageToken;
         $log.info(data);
+        $scope.loading = false;
       })
-      .error( function () {
-        $log.info('Search error');
-      })
-      .finally( function () {
-        $scope.loadMoreButton.stopSpin();
-        $scope.loadMoreButton.setDisabled(false);
+      .error( function (e) {
+        $log.info('Search error: ', e);
         $scope.loading = false;
       })
       ;
