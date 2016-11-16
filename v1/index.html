@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Onsen UI YouTube</title>
+
+  <script src="https://cdn.rawgit.com/OnsenUI/OnsenUI/1.3.4/build/js/angular/angular.min.js"></script>
+  <script src="https://cdn.rawgit.com/OnsenUI/OnsenUI/1.3.4/build/js/onsenui.min.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/controllers.js"></script>
+
+  <link rel="stylesheet" href="https://cdn.rawgit.com/OnsenUI/OnsenUI/1.3.4/build/css/onsenui.css">
+  <link rel="stylesheet" href="https://cdn.rawgit.com/OnsenUI/OnsenUI/1.3.4/build/css/onsen-css-components.css">
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body ng-app="myApp" ng-controller="VideosController">
+
+  <ons-modal var="modal" ng-click="youtube.player.stopVideo(); modal.hide();">
+    <div id="player">
+      <div id="placeholder" style="width: 100%"></div>
+    </div>
+  </ons-modal>
+
+  <ons-tabbar>
+    <ons-tab page="html/search.html" persistent no-reload active="true" icon="fa fa-search" label="Search"></ons-tab>
+    <ons-tab page="html/history.html" persistent no-reload  icon="fa fa-history" label="History"></ons-tab>
+  </ons-tabbar>
+
+</body>
+</html>

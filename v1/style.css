@@ -1,0 +1,115 @@
+.tab-bar__button {
+  color: #ffffff;
+}
+
+:checked + .tab-bar__button {
+  color: #ffffff;
+}
+:checked + .tab-bar__button > .tab-bar__icon {
+  color: #e52d27;
+}
+
+.youtube-toolbar {
+  background: #e52d27;
+  color: white;
+}
+
+@media all and (orientation: portrait) {
+  #player {
+    height: 40vh;
+  }
+}
+
+@media all and (orientation: landscape) {
+  #player {
+    height: 90vh;
+    width: 90vw;
+    margin: auto;
+  }
+}
+
+.search-input {
+  background: #b31217;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  width: 96%;
+  margin: 6px auto 6px auto;
+  box-sizing: border-box;
+  height: 31px;
+  font-size: 15px;
+
+  background-image: url("data:image/svg+xml;utf8,<svg width='41px' height='40px' viewBox='0 0 41 40' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'><title>Slice 1</title><g id='Page 1' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'><g id='search' fill='#FFFFFF'><path d='M0.504,16.338 C0.504,25.085 7.635,32.165 16.444,32.165 C25.24,32.165 32.382,25.085 32.382,16.338 C32.382,7.591 25.24,0.5 16.444,0.5 C7.635,0.5 0.504,7.591 0.504,16.338 L0.504,16.338 Z M5.555,16.338 C5.555,10.359 10.423,5.521 16.445,5.521 C22.455,5.521 27.333,10.36 27.333,16.338 C27.333,22.317 22.455,27.156 16.445,27.156 C10.423,27.156 5.555,22.316 5.555,16.338 L5.555,16.338 Z M27.666,30.861 L34.521,38.67 C35.625,39.772 36.338,39.781 37.46,38.67 L39.661,36.489 C40.743,35.408 40.811,34.711 39.661,33.568 L31.765,26.793 L27.666,30.861 L27.666,30.861 Z M27.666,30.861' id='Shape'></path></g></g></svg>");
+  background-position: 8px center;
+  background-repeat: no-repeat;
+  -webkit-background-size: 17px;
+  background-size: 17px;
+  font-weight: 400;
+  display: block;
+}
+
+.search-input:focus {
+  background-color: #b31217;
+  color: white;
+  border: 0px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+::-webkit-input-placeholder{ color: #e52d27;}
+:-moz-placeholder{ color: #e52d27;}
+::-moz-placeholder{ color: #e52d27;}
+:-ms-input-placeholder{ color: #e52d27;}
+
+#searchToolbar ~ .page__content{
+  margin-top: 0px;
+}
+
+.search-bar {
+    width: 100%;
+    position: fixed;
+    display: block;
+    z-index: 2;
+}
+.after-search-bar {
+    margin-top: 35px;
+    z-index: 1;
+    word-wrap: break-word !important;
+}
+.after-list {
+    margin-top: 30px;
+    color: #999;
+    font-size: 15px;
+    text-align: center;
+}
+
+.list-item-container {
+  line-height: 1;
+  padding: 15px 0px 15px 15px;
+}
+
+.thumbnail {
+  width: 80px;
+  height: 80px;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+}
+
+.title {
+  font-weight: 500;
+  line-height: 16px;
+  font-size: 15px;
+  margin-bottom: 6px;
+}
+
+.user {
+  font-size: 12px;
+  opacity: 0.8;
+  color: #e52d27;
+  margin-bottom: 6px;
+}
+
+.desc {
+  line-height: 1.2;
+  font-size: 13px;
+}
