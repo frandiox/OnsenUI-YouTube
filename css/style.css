@@ -39,8 +39,10 @@
 .search-input input:-ms-input-placeholder{ color: #e52d27;}
 
 
-.search-input input::-webkit-search-cancel-button { -webkit-appearance: none; }
-.search-input input::-webkit-search-cancel-button { -webkit-appearance: none; }
+.search-input input::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  margin-right: 15px;
+}
 
 .search-bar {
   background: #e52d27;
@@ -107,3 +109,6 @@ ons-page:not([modifier~=material]) > .search-bar ~ .content {
   background-color: #fff;
 }
 
+.android-search-bar ons-input {
+  width: 100%;
+}

@@ -50,7 +50,7 @@
           </div>
           <label class="center" ng-click="$event.stopPropagation()">
             <form ng-submit="search(true); tabbar.setActiveTab(0); androidSearchModal.hide();">
-              <ons-input modifier="transparent" input-id="android-search-input" placeholder="Search for videos in YouTube" ng-model="query"></ons-input>
+              <ons-input type="search" modifier="transparent" input-id="android-search-input" placeholder="Search for videos in YouTube" ng-model="query"></ons-input>
             </form>
           </label>
         </ons-toolbar>
