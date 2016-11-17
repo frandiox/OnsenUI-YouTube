@@ -53,11 +53,14 @@
 
 ons-list-item > .center {
   padding-right: 15px;
-  word-wrap: break-word !important;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 ons-list-item > .left {
   align-self: flex-start;
+  min-width: 94px;
 }
 
 ons-page:not([modifier~=material]) > .search-bar ~ .content {

@@ -1,14 +1,14 @@
-<ons-page ons-show="updateToolbar('Search')" ng-infinite-scroll="loadMore">
+<ons-page ons-show="updateToolbar('Search'); !isAndroid() && focusInput('ios')" ng-infinite-scroll="loadMore">
   <ons-if class="search-bar" platform="ios other">
-    <form ng-submit="search(true)">
-      <ons-input type="search" class="search-input" placeholder="Search for videos in YouTube" ng-model="query"></ons-input>
+    <form ng-submit="search(true); blurInput('ios')">
+      <ons-input type="search" class="search-input" input-id="ios-search-input" placeholder="Search for videos in YouTube" ng-model="query"></ons-input>
     </form>
   </ons-if>
 
   <div class="content">
 
     <ons-list>
-      <ons-list-item tappable disable-auto-styling ng-repeat="video in results track by $index" ng-click="modal.show(); launch(video, true)">
+      <ons-list-item tappable ng-repeat="video in results track by $index" ng-click="modal.show(); launch(video, true)">
         <div class="left">
           <img class="thumbnail" ng-src="{{ video.thumbnail }}">
         </div>
