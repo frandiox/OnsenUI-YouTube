@@ -22,8 +22,12 @@ angular.module('myApp')
       $scope.toolbarTitle = title;
     }
 
-    $scope.focusInput = function() {
-      document.getElementById('android-search-input').focus();
+    $scope.focusInput = function(platform) {
+      document.getElementById(platform + '-search-input').focus();
+    };
+
+    $scope.blurInput = function(platform) {
+      document.getElementById(platform + '-search-input').blur();
     };
 
     $scope.launch = function (video, archive) {
