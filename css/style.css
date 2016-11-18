@@ -60,7 +60,7 @@ ons-list-item > .center {
 
 ons-list-item > .left {
   align-self: flex-start;
-  min-width: 94px;
+  min-width: 104px;
 }
 
 ons-page:not([modifier~=material]) > .search-bar ~ .content {
@@ -68,17 +68,14 @@ ons-page:not([modifier~=material]) > .search-bar ~ .content {
 }
 
 .after-list {
-    margin-top: 30px;
-    color: #999;
-    font-size: 15px;
-    text-align: center;
+  margin: 20px 0;
+  color: #999;
+  font-size: 15px;
+  text-align: center;
 }
 
 .thumbnail {
-  width: 80px;
-  height: 80px;
-  border-radius: 4px;
-  -webkit-border-radius: 4px;
+  width: 88px;
 }
 
 .title {

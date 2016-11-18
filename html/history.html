@@ -1,7 +1,7 @@
 <ons-page ons-show="updateToolbar('History')">
   <div class="content">
     <ons-list>
-      <ons-list-item tappable disable-auto-styling ng-repeat="video in history track by $index" ng-click="modal.show(); launch(video, false)">
+      <ons-list-item tappable ng-repeat="video in history track by $index" ng-click="modal.show(); launch(video, false)">
         <div class="left">
           <img class="thumbnail" ng-src="{{ video.thumbnail }}">
         </div>
