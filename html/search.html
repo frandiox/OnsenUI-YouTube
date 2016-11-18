@@ -1,4 +1,4 @@
-<ons-page ons-show="updateToolbar('Search'); !isAndroid() && focusInput('ios')" ng-infinite-scroll="loadMore">
+<ons-page ons-show="updateToolbar('Search'); !isAndroid() && focusInput('ios')" id="test" ng-infinite-scroll="loadMore">
   <ons-if class="search-bar" platform="ios other">
     <form ng-submit="search(true); blurInput('ios')">
       <ons-input type="search" class="search-input" input-id="ios-search-input" placeholder="Search for videos in YouTube" ng-model="query"></ons-input>
@@ -26,9 +26,9 @@
       </ons-list-item>
     </ons-list>
 
-    <p class="after-list" ng-show="results.length === 0">
-      <span ng-hide="loading">{{ labelSearch }}</span>
-      <span ng-show="loading"><ons-icon icon="fa-spinner" size="22px" spin></ons-icon></span>
+    <p class="after-list">
+      <span ng-show="results.length === 0 && !loading">{{ labelSearch }}</span>
+      <span ng-show="loading"><ons-icon icon="fa-spinner" size="26px" spin></ons-icon></span>
     </p>
   </div>
 </ons-page>
