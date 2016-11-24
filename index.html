@@ -26,7 +26,10 @@
 
     <ons-toolbar>
       <ons-if class="left" platform="android"></ons-if>
-      <div class="center" style="width: 100%">Onsen UI YouTube - {{toolbarTitle}}</div>
+      <div class="center" style="width: 100%">
+        <ons-if platform="android">Onsen UI Jukebox</ons-if>
+        <ons-if platform="ios other">{{toolbarTitle}}</ons-if>
+      </div>
       <ons-if class="right" platform="android">
         <ons-toolbar-button ng-click="androidSearchModal.show(); ">
           <ons-icon icon="md-search"></ons-icon>
