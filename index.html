@@ -28,14 +28,14 @@
       <div class="center" style="width: 100%">Onsen UI YouTube - {{toolbarTitle}}</div>
       <ons-if class="right" platform="android">
         <ons-toolbar-button ng-click="androidSearchModal.show(); ">
-          <ons-icon icon="fa-search"></ons-icon>
+          <ons-icon icon="md-search"></ons-icon>
         </ons-toolbar-button>
       </ons-if>
     </ons-toolbar>
 
     <ons-tabbar var="tabbar" position="auto">
-      <ons-tab page="html/search.html"active ng-attr-icon="{{!isAndroid() && 'fa-search' || undefined }}" label="Search"></ons-tab>
-      <ons-tab page="html/history.html" ng-attr-icon="{{!isAndroid() && 'fa-history' || undefined }}" label="History"></ons-tab>
+      <ons-tab page="html/search.html"active ng-attr-icon="{{!isAndroid() && 'ion-ios-search-strong' || undefined }}" label="Search"></ons-tab>
+      <ons-tab page="html/history.html" ng-attr-icon="{{!isAndroid() && 'ion-ios-clock-outline' || undefined }}" label="History"></ons-tab>
     </ons-tabbar>
 
     <ons-modal var="modal" ng-click="youtube.player.stopVideo(); modal.hide();">
