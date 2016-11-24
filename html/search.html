@@ -1,4 +1,4 @@
-<ons-page ons-show="updateToolbar('Search'); !isAndroid() && focusInput('ios')" id="test" ng-infinite-scroll="loadMore">
+<ons-page ons-show="updateToolbar('Search'); !isAndroid() && focusInput('ios')" ng-infinite-scroll="loadMore">
   <ons-if class="search-bar" platform="ios other">
     <form ng-submit="search(true); blurInput('ios')">
       <ons-input type="search" class="search-input" input-id="ios-search-input" placeholder="Search for videos in YouTube" ng-model="query"></ons-input>
