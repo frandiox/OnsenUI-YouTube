@@ -25,12 +25,12 @@
   background-repeat: no-repeat;
   -webkit-background-size: 17px;
   background-size: 17px;
-  font-weight: 400;
+  font-weight: 450;
   display: block;
 }
 
 .search-input input {
-  color: white;
+  color: grey;
 }
 
 .search-input input::-webkit-input-placeholder{ color: #e52d27;}
